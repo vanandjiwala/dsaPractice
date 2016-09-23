@@ -8,31 +8,35 @@ public class Ex8 {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		String S = scan.next().toUpperCase();
+		
 		String Pattern = "SOS";
+		String expected = "";
 		int count = 0;
-		if((S.length())%4 == 0){
-//			 
-			for(int i = 0;i< S.length(); i+=3){
-				System.out.println(S.substring(i, i+3));
-				if(!(S.substring(i, i+3).equals(Pattern))){
-					System.out.println(S);
-					if(S.charAt(i) != Pattern.charAt(i)){
-						count++;
-					}else if(S.charAt(i+1) != Pattern.charAt(i+1)){
-						count++;
-					}else if(S.charAt(i+2) != Pattern.charAt(i+2)){
-						count++;
-					}
-				}else{
-					System.out.println("No Operation");
-				}
+		if((S.length())%3 == 0){
+			StringBuilder build = new StringBuilder();
+			for(int i=0;i<(S.length()/3);i++){
+				build.append(Pattern);
 			}
+			expected = build.toString();
+			
+			int i = 0;
+			while (i < S.length()) {
+				
+				if(expected.charAt(i) != S.charAt(i)){
+					count++;
+				}
+
+				i++;	
+			}
+			
+			
 		System.out.println(count);
 		}
 		else{
 			System.out.println("Incorrect Input");
 		}
-				
+		
+		scan.close();
 				
 	}
 
