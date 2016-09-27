@@ -11,18 +11,11 @@ public class Ex13_Efficient {
 		boolean result[] = new boolean[p];
 		
 		for(int i = 0; i < p ; i++){
-			String a = inputString(scan);
-			String b = inputString(scan);
-			
-			if(a.length() >= b.length()){
-				
-				 result[i] = checkSubstring(a, b);
-				
-				
-			}else{
-				result[i] = checkSubstring(b, a);
-			}
-			
+			String a = inputString(scan).toLowerCase();
+			String b = inputString(scan).toLowerCase();
+
+			result[i] = checkSubstring(a, b);
+
 		}
 		
 		PrintBooleanArray(result);
@@ -31,12 +24,14 @@ public class Ex13_Efficient {
 	
 	
 	public static boolean checkSubstring(String S, String B){
-		char bCharArray[] = B.toCharArray();
-		for(int i = 0; i<B.length(); i++){
-			CharSequence seq = String.valueOf(bCharArray[i]);
-			if(S.contains(seq)){
+		char bCharArray[] = ("abcdefghijklmnopqrstuvwxyz").toCharArray();
+		for(int i = 0; i<bCharArray.length; i++){
+			
+			if((S.indexOf(bCharArray[i]) != -1) && (B.indexOf(bCharArray[i]) != -1)){
 				return true;
 			}
+		
+			
 		}
 		
 		return false;
@@ -50,11 +45,7 @@ public class Ex13_Efficient {
 		return scan.next();
 	}
 
-	static void PrintIntArray(int[] a){
-		for(int i =0; i< a.length; i++){
-			System.out.println(a[i]);
-		}
-	}
+
 	
 	static void PrintBooleanArray(boolean[] a){
 		for(int i =0; i< a.length; i++){
