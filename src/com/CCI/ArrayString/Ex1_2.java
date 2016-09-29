@@ -10,6 +10,7 @@ public class Ex1_2 {
 		String S = scan.next();
 		S = S.trim();
 		System.out.println(reverseString(S));
+		scan.close();
 	}
 	
 	public static String reverseString(String s){

@@ -10,6 +10,7 @@ public class Ex1_3 {
 		String a = scan.nextLine().toLowerCase();
 		String b = scan.nextLine().toLowerCase();
 		System.out.println(permuteCheck(a,b));
+		scan.close();
 	}
 
 	public static boolean permuteCheck(String s1, String s2){

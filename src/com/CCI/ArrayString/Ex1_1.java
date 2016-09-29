@@ -9,7 +9,7 @@ public class Ex1_1 {
 		Scanner scan = new Scanner(System.in);
 		String s = scan.nextLine();
 		System.out.println(stringUnique(s));
-		
+		scan.close();
 		
 	}
 	
